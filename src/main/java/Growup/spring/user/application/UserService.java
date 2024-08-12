@@ -50,10 +50,7 @@ public class UserService {
         checkNickDuplication(request.getNickName());
 
         // 이메일 중복 확인( 활동회원인지, 미인증 회원인지)
-        if (userRepository.existsByEmailAndStatus(request.getEmail(),UserState.ACTIVE)||
-                (userRepository.existsByEmailAndStatus(request.getEmail(),UserState.NONACTIVE))){
-            throw new UserHandler(ErrorStatus.USER_EMAIL_DUPLICATE);
-        }
+        userRepository.existsByEmailAndStatus(request.getEmail());
         // 두 비밀번호 일치성 확인
         checkPassword(request.getPassword(),request.getPasswordCheck());
         //비밀번호 암호화

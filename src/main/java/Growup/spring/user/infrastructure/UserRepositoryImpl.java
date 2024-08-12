@@ -22,8 +22,11 @@ public class UserRepositoryImpl implements UserRepository {
 
 
     @Override
-    public Boolean existsByEmailAndStatus(String email, UserState state){
-        return userJpaRepository.existsByEmailAndStatus(email,state);
+    public void existsByEmailAndStatus(String email){
+        if(userJpaRepository.existsByEmailAndStatus(email,UserState.ACTIVE)||
+                    (userJpaRepository.existsByEmailAndStatus(email,UserState.NONACTIVE))){
+            throw new UserHandler(ErrorStatus.USER_EMAIL_DUPLICATE);
+        }
     }
 
     @Override
