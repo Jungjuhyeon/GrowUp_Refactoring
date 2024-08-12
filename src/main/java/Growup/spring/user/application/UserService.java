@@ -43,6 +43,7 @@ public class UserService {
     /**
      *  회원가입
      */
+    @Transactional
     public UserDtoRes.userRegisterRes signUp(UserDtoReq.userRegisterReq request){
 
         // 닉네임 중복 확인
@@ -67,6 +68,7 @@ public class UserService {
     /**
      *  회원가입 인증완료 확인
      */
+    @Transactional
     public void signUpAuth(String certificationNumber,String email){
         //인증이 유효한지
         User user = verifyEmail(certificationNumber, email);
@@ -77,6 +79,7 @@ public class UserService {
     /**
      *  로그인
      */
+    @Transactional
     public UserDtoRes.userLoginRes login(UserDtoReq.userLoginReq request) {
         //해당 Email로 아이디 찾기 - 아이디 불일치(ACTIVE,NONACTIVE)
         User user = userRepository.findByEmailAndStatus(request.getEmail());
@@ -122,6 +125,7 @@ public class UserService {
     /**
      * 패스워드 재설정
      */
+    @Transactional
     public User pwRestore(UserDtoReq.passwordRestoreReq request,Long userId){
         //유저 아이디 찾기(유저 객체 조회)
         User user = userRepository.findById(userId);
@@ -159,6 +163,7 @@ public class UserService {
     }
 
     //로그아웃
+    @Transactional
     public void logout(String accessToken,Long userId) {
         Long expiration = jwtUtil.getExpiration(accessToken);
 
@@ -169,6 +174,7 @@ public class UserService {
     }
 
     //이메일 변경
+    @Transactional
     public void emailChange(String email,Long userId){
 
         User user = userRepository.findById(userId);
@@ -192,6 +198,7 @@ public class UserService {
     /**
      *  회원탈퇴
      */
+    @Transactional
     public void withdraw(Long userId, String currentPwd) {
         User user = userRepository.findById(userId);
 
@@ -213,6 +220,7 @@ public class UserService {
     /**
      *  프로필 이미지 변경
      */
+    @Transactional
     public User photoChange(MultipartFile photoImage, Long userId) {
         User user = userRepository.findById(userId);
 
@@ -231,6 +239,7 @@ public class UserService {
     /**
      *  닉네임 변경
      */
+    @Transactional
     public void changeNickname(String nickName,Long userId) {
         User user = userRepository.findById(userId);
         //닉네임 중복확인

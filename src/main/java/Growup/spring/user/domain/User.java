@@ -1,7 +1,5 @@
 package Growup.spring.user.domain;
 
-import Growup.spring.constant.handler.UserHandler;
-import Growup.spring.constant.status.ErrorStatus;
 import Growup.spring.user.domain.Enum.UserRole;
 import Growup.spring.user.domain.Enum.UserState;
 import Growup.spring.constant.entity.BaseEntity;
