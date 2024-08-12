@@ -19,8 +19,8 @@ import Growup.spring.liked.service.LikedService;
 import Growup.spring.participate.model.Participate;
 import Growup.spring.participate.repository.ParticipateRepository;
 import Growup.spring.security.JwtProvider;
-import Growup.spring.user.model.User;
-import Growup.spring.user.repository.UserRepository;
+import Growup.spring.user.domain.User;
+import Growup.spring.user.infrastructure.UserJpaRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -36,7 +36,7 @@ import java.util.stream.Collectors;
 public class GrowRoomServiceImpl implements GrowRoomService {
     private final GrowRoomRepository growRoomRepository;
     private final JwtProvider jwtProvider;  // 토큰 발급을 위함
-    private final UserRepository userRepository;
+    private final UserJpaRepository userRepository;
     private final PostRepository postRepository;
     public final GrowRoomCategoryRepository growRoomCategoryRepository;
     private final RecruitmentRepository recruitmentRepository;

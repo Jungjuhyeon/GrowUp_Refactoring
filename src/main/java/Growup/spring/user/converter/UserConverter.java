@@ -3,7 +3,7 @@ package Growup.spring.user.converter;
 import Growup.spring.user.dto.RefreshTokenRes;
 import Growup.spring.user.dto.UserDtoReq;
 import Growup.spring.user.dto.UserDtoRes;
-import Growup.spring.user.model.User;
+import Growup.spring.user.domain.User;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -47,15 +47,6 @@ public class UserConverter {
                 .build();
     }
 
-    //유저 객체 만들기
-    public static User toUser(UserDtoReq.userRegisterReq request){
-        return User.builder()
-                .name(request.getName())
-                .email(request.getEmail())
-                .password(request.getPassword())
-                .nickName(request.getNickName())
-                .build();
-    }
 
     public static UserDtoRes.infoRes info(User user){
         return UserDtoRes.infoRes.builder()

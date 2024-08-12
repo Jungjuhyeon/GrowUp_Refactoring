@@ -1,10 +1,10 @@
 package Growup.spring.user.dto;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
-
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
 
 
 public class UserDtoReq {
@@ -17,7 +17,9 @@ public class UserDtoReq {
         private String name;
         @Size(message = "닉네임은 2글자 이상, 10글자 이하입니다.", min= 2, max = 10)
         private String nickName;
+        @Pattern(regexp = "^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*\\\\.[a-zA-Z]{2,3}$",message = "이메일 형식이 아닙니다.")
         private String email;
+        @Pattern(regexp = "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*?&#])[A-Za-z\\d@$!%*?&#]{8,20}$",message = "패스워드를 확인하세요.(최소8자,최대20자,영문자,숫자,특수문자 모두 포함되어야 합니다.")
         private String password;
         private String passwordCheck;
 
@@ -25,16 +27,16 @@ public class UserDtoReq {
     }
     @Getter
     public static class userLoginReq{
-        @NotBlank(message = "이름은 공백일 수 없습니다.")
+        @Pattern(regexp = "^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*\\\\.[a-zA-Z]{2,3}$",message = "이메일 형식이 아닙니다.")
         private String email;
-        @NotBlank(message = "비밀번호는 공백일 수 없습니다.")
+        @Pattern(regexp = "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*?&#])[A-Za-z\\d@$!%*?&#]{8,20}$",message = "패스워드를 확인하세요.(최소8자,최대20자,영문자,숫자,특수문자 모두 포함되어야 합니다.")
         private String password;
     }
 
     @Getter
     @Setter
     public static class passwordRestoreReq{
-        @NotBlank
+        @Pattern(regexp = "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*?&#])[A-Za-z\\d@$!%*?&#]{8,20}$",message = "패스워드를 확인하세요.(최소8자,최대20자,영문자,숫자,특수문자 모두 포함되어야 합니다.")
         private String password;
         @NotBlank
         private String passwordCheck;
@@ -52,14 +54,14 @@ public class UserDtoReq {
     @Getter
     @Setter
     public static class currentPasswordCheckReq{
-        @NotBlank
+        @Pattern(regexp = "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*?&#])[A-Za-z\\d@$!%*?&#]{8,20}$",message = "패스워드를 확인하세요.(최소8자,최대20자,영문자,숫자,특수문자 모두 포함되어야 합니다.")
         private String currentPwd;
     }
 
     @Getter
     @Setter
     public static class withdrawReq{
-        @NotBlank
+        @Pattern(regexp = "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*?&#])[A-Za-z\\d@$!%*?&#]{8,20}$",message = "패스워드를 확인하세요.(최소8자,최대20자,영문자,숫자,특수문자 모두 포함되어야 합니다.")
         private String currentPwd;
     }
 

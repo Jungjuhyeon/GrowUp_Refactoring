@@ -1,4 +1,4 @@
-package Growup.spring.config;
+package Growup.spring.config.S3;
 
 
 import com.amazonaws.services.s3.AmazonS3Client;

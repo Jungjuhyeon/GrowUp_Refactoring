@@ -6,7 +6,7 @@ import Growup.spring.growRoom.model.component.Number;
 import Growup.spring.growRoom.model.component.*;
 import Growup.spring.liked.model.Liked;
 import Growup.spring.participate.model.Participate;
-import Growup.spring.user.model.User;
+import Growup.spring.user.domain.User;
 import lombok.*;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
