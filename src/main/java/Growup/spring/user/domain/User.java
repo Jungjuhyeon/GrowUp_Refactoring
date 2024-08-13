@@ -1,5 +1,6 @@
 package Growup.spring.user.domain;
 
+import Growup.spring.todoList.domain.TodoList;
 import Growup.spring.user.domain.Enum.UserRole;
 import Growup.spring.user.domain.Enum.UserState;
 import Growup.spring.constant.entity.BaseEntity;
@@ -10,6 +11,9 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -61,8 +65,8 @@ public class User extends BaseEntity {
 //    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 //    private List<Liked> likeList = new ArrayList<>();
 //
-//    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-//    private List<TodoList> todoLists = new ArrayList<>();
+    @OneToMany(mappedBy = "userId")
+    private List<TodoList> todoLists = new ArrayList<>();
 //
 //    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 //    private List<Calender> calenderList = new ArrayList<>();

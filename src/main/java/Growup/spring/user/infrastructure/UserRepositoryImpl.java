@@ -20,7 +20,6 @@ public class UserRepositoryImpl implements UserRepository {
         return userJpaRepository.existsByNickName(nickName);
     }
 
-
     @Override
     public void existsByEmailAndStatus(String email){
         if(userJpaRepository.existsByEmailAndStatus(email,UserState.ACTIVE)||

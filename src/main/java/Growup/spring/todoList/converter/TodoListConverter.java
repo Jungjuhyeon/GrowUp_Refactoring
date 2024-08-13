@@ -1,9 +1,7 @@
 package Growup.spring.todoList.converter;
 
-import Growup.spring.todoList.dto.TodoDtoListReq;
 import Growup.spring.todoList.dto.TodoDtoListRes;
-import Growup.spring.todoList.model.TodoList;
-import Growup.spring.user.model.User;
+import Growup.spring.todoList.domain.TodoList;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -15,18 +13,11 @@ import java.util.List;
 @RequiredArgsConstructor
 public class TodoListConverter {
 
-    //todolist 객체 생성
-    public static TodoList todoList(User user, TodoDtoListReq.todoEnrollReq request){
-        return TodoList.builder()
-                .user(user)
-                .comment(request.getComment())
-                .build();
-    }
 
     //todolist 등록 응답
     public static TodoDtoListRes.todoEnrollRes todoListDtoRes(TodoList todoList){
         return TodoDtoListRes.todoEnrollRes .builder()
-                .userId(todoList.getUser().getId())
+                .userId(todoList.getId())
                 .createAt(todoList.getCreatedAt())
                 .build();
     }

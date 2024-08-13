@@ -1,8 +1,8 @@
 package Growup.spring.todoList.dto;
 
+import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 
-import javax.validation.constraints.NotBlank;
 
 public class TodoDtoListReq {
 

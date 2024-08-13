@@ -1,6 +1,6 @@
 package Growup.spring.todoList.dto;
 
-import Growup.spring.todoList.model.Enum.TodoStatus;
+import Growup.spring.todoList.domain.Enum.TodoStatus;
 import lombok.*;
 
 import java.time.LocalDateTime;

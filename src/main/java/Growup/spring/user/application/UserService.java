@@ -8,7 +8,6 @@ import Growup.spring.constant.handler.JwtHandler;
 import Growup.spring.constant.status.ErrorStatus;
 import Growup.spring.constant.handler.UserHandler;
 import Growup.spring.user.converter.UserConverter;
-import Growup.spring.user.domain.Enum.UserState;
 import Growup.spring.email.service.EmailService;
 import Growup.spring.user.dto.UserDtoReq;
 import Growup.spring.user.domain.User;
