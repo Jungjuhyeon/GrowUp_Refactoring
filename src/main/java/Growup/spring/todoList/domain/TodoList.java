@@ -29,7 +29,8 @@ public class TodoList extends BaseEntity {
 //  @Column(columnDefinition = "VARCHAR(10) DEFAULT 'NONACTIVE'")
     private TodoStatus status;
 
-//  @ManyToOne(fetch = FetchType.LAZY)
+//
+// @ManyToOne(fetch = FetchType.LAZY)
     @Column(name = "user_id")
     private Long userId;
 

@@ -6,7 +6,7 @@ import Growup.spring.email.converter.EmailConverter;
 import Growup.spring.email.dto.EmailDtoRes;
 import Growup.spring.participate.converter.ParticipateConverter;
 import Growup.spring.participate.dto.ParticipateDtoRes;
-import Growup.spring.participate.service.ParticipateService;
+import Growup.spring.participate.application.ParticipateService;
 import Growup.spring.user.converter.UserConverter;
 import Growup.spring.user.domain.User;
 import Growup.spring.email.dto.EmailDtoReq;

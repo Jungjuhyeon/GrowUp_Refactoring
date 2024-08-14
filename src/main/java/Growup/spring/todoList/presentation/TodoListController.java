@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/growup/todo")
+@RequestMapping("/api/v1/growup/todo")
 public class TodoListController {
 
     private final TodoService todoListService;

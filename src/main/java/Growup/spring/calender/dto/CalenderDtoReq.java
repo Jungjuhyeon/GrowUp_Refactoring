@@ -1,10 +1,10 @@
 package Growup.spring.calender.dto;
 
-import Growup.spring.calender.model.Enum.CalenderColorStatus;
+import Growup.spring.calender.domain.Enum.CalenderColorStatus;
+import jakarta.validation.constraints.*;
 import lombok.Getter;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
+
 import java.time.LocalDate;
 
 public class CalenderDtoReq {

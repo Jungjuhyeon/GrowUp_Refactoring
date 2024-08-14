@@ -1,5 +1,6 @@
 package Growup.spring.user.domain;
 
+import Growup.spring.calender.domain.Calender;
 import Growup.spring.todoList.domain.TodoList;
 import Growup.spring.user.domain.Enum.UserRole;
 import Growup.spring.user.domain.Enum.UserState;
@@ -65,11 +66,11 @@ public class User extends BaseEntity {
 //    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 //    private List<Liked> likeList = new ArrayList<>();
 //
-    @OneToMany(mappedBy = "userId")
+    @OneToMany(mappedBy = "userId",cascade = CascadeType.ALL)
     private List<TodoList> todoLists = new ArrayList<>();
-//
-//    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-//    private List<Calender> calenderList = new ArrayList<>();
+
+    @OneToMany(mappedBy = "userId")
+    private List<Calender> calenderList = new ArrayList<>();
 //
 //    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 //    private List<CalenderColor> calenderColorList = new ArrayList<>();

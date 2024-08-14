@@ -1,7 +1,6 @@
 package Growup.spring.calender.dto;
 
-import Growup.spring.calender.model.Enum.CalenderColorStatus;
-import Growup.spring.calender.model.Enum.CalenderStatus;
+import Growup.spring.calender.domain.Enum.CalenderStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -32,7 +31,6 @@ public class CalenderDtoRes {
     public static class calenderInquiryResultRes{
         private Long userId;
         private LocalDate day;
-        private CalenderColorStatus color;
         private List<calenderInquiryRes> calenderInquiryLists;
     }
 
@@ -45,7 +43,6 @@ public class CalenderDtoRes {
         private Long calenderId;
         private String comment;
         private CalenderStatus status;
-        private LocalDate day;
     }
 
     //캘린더 한달 기준 조회
@@ -55,7 +52,6 @@ public class CalenderDtoRes {
     @AllArgsConstructor
     public static class calenderMonthInquiryRes{
         private LocalDate day;
-        private CalenderColorStatus color;
         private List<calenderInquiryRes> calenderInquiryLists;
     }
 

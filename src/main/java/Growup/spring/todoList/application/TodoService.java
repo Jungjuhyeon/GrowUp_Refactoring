@@ -40,6 +40,7 @@ public class TodoService{
                 .map(TodoListConverter::todoInquiryRes)
                 .collect(Collectors.toList());
     }
+
     //todoList 내용 수정
     @Transactional
     public void todoListCommentModify(Long todoListId,TodoDtoListReq.todoCommentModifyReq request){
