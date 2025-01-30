@@ -1,4 +1,4 @@
-# [REST API 서버] "자기개발 및 공부 시간 측명 및 화면 공유 서비스"
+# [REST API 서버] "자기개발 및 공부 시간 측정 및 화면 공유 서비스"
 
 <img width="1164" alt="image" src="https://github.com/Jungjuhyeon/BOJ/assets/131857282/31dcbc2c-7fba-41b9-b34b-96684897fba1">
 
